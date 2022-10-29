@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Piedra, Papel o Tijera</title>
+        <script>
+            // 1 es piedra | 2 es papel | 3 es tijera
+            function numranJug(min, max) {
+                return Math.floor(Math.random()*(max-min+1)) + min;
+                }
+            function numranPc(min, max) {
+                return Math.floor(Math.random()*(max-min+1)) + min;
+                }
+            function eleccionJugador(jugadaJugador){
+                let resultado = ""
+                if (jugadaJugador == 1){
+                    resultado = "Jugador saca Piedra ✊"
+                } else if (jugadaJugador == 2){
+                    resultado = "Jugador saca Papel 🧻"
+                } else if (jugadaJugador == 3){
+                    resultado = "Jugador saca Tijera ✂️"
+                } else{
+                    resultado = "Elección no valida ☠️"
+                }
+                return resultado
+                } 
+            function eleccionPc(jugadaPc){
+                let resultado = ""
+                if (jugadaPc == 1){
+                    resultado = "Pc saca Piedra ✊"
+                } else if (jugadaPc == 2){
+                    resultado = "Pc saca Papel 🧻"
+                } else if (jugadaPc == 3){
+                    resultado = "Pc saca Tijera ✂️"
+                } else{
+                    resultado = "Elección no valida ☠️"
+                }
+                return resultado
+                }
+            let jugador = numranJug(1,3)
+                alert (eleccionJugador(jugador))
+            let pc = numranPc(1,3)
+                alert (eleccionPc(pc))
+            if (jugador == pc){
+                alert ("Empate")
+                } else if(jugador == 1 && pc == 2){
+                    alert ("Gana PC")
+                } else if(jugador == 3 && pc == 1){
+                    alert ("Gana PC")
+                } else if(jugador == 3 && pc == 2){
+                    alert ("Ganaste")
+            }
+            if (pc == 1 && jugador == 2){
+                alert("Ganaste")
+                } else if(pc == 3 && jugador == 1){
+                    alert ("Ganaste")
+                } else if(pc == 3 && jugador == 2){
+                    alert ("Gana PC")
+            }
+        </script>
+    </head>
+</html>
+
+    
